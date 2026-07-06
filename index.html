@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hamed Shirzad</title>
   <meta name="description"
-    content="Hamed Shirzad — Computer Science PhD candidate at UBC and Student Researcher at Google Research. Research on LLM post-training, reinforcement learning, and efficient graph transformers.">
+    content="Hamed Shirzad, Computer Science PhD candidate at UBC and Student Researcher at Google Research. Research on LLM post-training, reinforcement learning, and efficient graph transformers.">
   <meta name="author" content="Hamed Shirzad">
   <meta property="og:title" content="Hamed Shirzad">
   <meta property="og:description"
@@ -506,7 +506,7 @@
           <p class="role">Computer Science PhD candidate, <b>UBC</b> &nbsp;·&nbsp; Student Researcher, <b>Google
               Research</b></p>
           <div class="links">
-            <a href="mailto:shirzad@cs.ubc.ca">✉ Email</a>
+            <a class="email-link" href="#">✉ Email</a>
             <a href="https://scholar.google.ca/citations?user=A2CbSLIAAAAJ" target="_blank" rel="noopener">Google
               Scholar</a>
             <a href="https://github.com/hamed1375" target="_blank" rel="noopener">GitHub</a>
@@ -524,7 +524,7 @@
         Researcher at Google Research. My work lives at the meeting point of <b>learning algorithms</b> and
         <b>architectures that actually scale</b>.
       </p>
-      <p class="lead">Right now I'm focused on post-training large language models with reinforcement learning — getting
+      <p class="lead">Right now I'm focused on post-training large language models with reinforcement learning, getting
         models to improve themselves through self-play rather than leaning only on human labels. Earlier, a big chunk of
         my research was about making transformers on graphs scale to real problem sizes, and building more trustworthy
         ways to evaluate and generate structured data. I like methods that are motivated by theory but earn their keep
@@ -554,7 +554,7 @@
         </div>
         <div class="row">
           <div class="when">2026</div>
-          <p class="what"><b>TxPert</b> is published in <i>Nature Biotechnology</i> — predicting transcriptomic
+          <p class="what"><b>TxPert</b> is published in <i>Nature Biotechnology</i>. It predicts transcriptomic
             responses to unseen genetic perturbations.</p>
         </div>
         <div class="row">
@@ -591,8 +591,8 @@
             Retrieval from Knowledge Graphs</a><span class="venue">Under review · NeurIPS 2026</span></p>
         <p class="authors"><span class="me">H. Shirzad</span>, F. Wenkel, D. Beaini, D. J. Sutherland, E. Noutahi</p>
         <div class="tldr"><b>TL;DR</b>Most knowledge-graph retrieval grabs a fixed blob of neighbors around your query
-          and hopes the answer is in there. We instead train an agent with RL to start from a few seed nodes and decide,
-          step by step, which directions are actually worth expanding into — so it reaches the relevant facts without
+          and hopes the answer is in there. We instead train a GNN with RL to start from a few seed nodes and decide,
+          step by step, which directions are actually worth expanding into, so it reaches the relevant facts without
           dragging along all the noise.</div>
         <div class="plinks"><a href="https://arxiv.org/abs/2605.23753" target="_blank" rel="noopener">arXiv</a></div>
       </div>
@@ -604,7 +604,7 @@
         <p class="authors">F. Wenkel, W. Tu, C. Masschelein, <span class="me">H. Shirzad</span>, et al.</p>
         <div class="tldr"><b>TL;DR</b>If you knock out a gene a cell has never had knocked out before, how does its gene
           expression shift? We lean on several biological knowledge graphs at once so the model can reason about
-          relationships it hasn't seen directly — which is what lets it generalize to genuinely unseen perturbations
+          relationships it hasn't seen directly. That's what lets it generalize to genuinely unseen perturbations
           instead of just memorizing the training set.</div>
         <div class="plinks">
           <a href="https://www.nature.com/articles/s41587-026-03113-4" target="_blank" rel="noopener">Paper</a>
@@ -621,7 +621,7 @@
           J. Sutherland</p>
         <div class="tldr"><b>TL;DR</b>Graph transformers get expensive fast because attention wants to connect
           everything to everything. We show you can be far more aggressive about sparsifying it than people assumed:
-          train a tiny throwaway model, watch which connections it actually uses, keep only those — and the full-size
+          train a tiny throwaway model, watch which connections it actually uses, keep only those. The full-size
           model trained on that sparse graph still matches accuracy while scaling to much larger graphs.</div>
         <div class="plinks">
           <a href="https://arxiv.org/abs/2411.16278" target="_blank" rel="noopener">arXiv</a>
@@ -652,7 +652,7 @@
         <p class="authors"><span class="me">H. Shirzad</span>, K. Hassani, D. J. Sutherland</p>
         <div class="tldr"><b>TL;DR</b>How do you actually tell whether a graph generator is any good? The usual
           hand-picked statistics quietly miss a lot. We show that features from a contrastively-trained GNN make a much
-          more reliable yardstick — and that combining them with classic descriptors is stronger than either alone.
+          more reliable yardstick, and that combining them with classic descriptors beats either alone.
         </div>
         <div class="plinks">
           <a href="https://arxiv.org/abs/2206.06234" target="_blank" rel="noopener">arXiv</a>
@@ -667,7 +667,7 @@
         <p class="authors"><span class="me">H. Shirzad</span>, H. Hajimirsadeghi, A. H. Abdi, G. Mori</p>
         <div class="tldr"><b>TL;DR</b>We generate a graph by first building a tree of node-clusters and then filling in
           edges cluster by cluster. Because the tree backbone is permutation-invariant, this sidesteps the node-ordering
-          headaches that trip up most sequential graph generators — and we argue for evaluating such models by
+          headaches that trip up most sequential graph generators. We also argue for evaluating such models by
           likelihood rather than the shaky statistics people usually reach for.</div>
         <div class="plinks"><a href="https://arxiv.org/abs/2106.10656" target="_blank" rel="noopener">arXiv</a></div>
       </div>
@@ -679,7 +679,7 @@
         <p class="authors"><span class="me">H. Shirzad</span>, H. Lin, B. Venkatachalam, A. Velingker, D. Woodruff, D.
           J. Sutherland</p>
         <div class="tldr"><b>TL;DR</b>The theory companion to our sparsification work: we prove <i>why</i> graph
-          transformers for transductive tasks can be compressed so aggressively without losing much — turning an
+          transformers for transductive tasks can be compressed so aggressively without losing much, turning an
           empirical trick into something with guarantees behind it.</div>
         <div class="plinks"><a href="https://arxiv.org/abs/2411.13028" target="_blank" rel="noopener">arXiv</a></div>
       </div>
@@ -690,8 +690,7 @@
             Workshop · ICLR 2024</span></p>
         <p class="authors"><span class="me">H. Shirzad</span>, R. Deng, H. Zhao, F. Tung</p>
         <div class="tldr"><b>TL;DR</b>Training a conditional diffusion model turns out to rhyme with masked
-          auto-encoding. We use that to learn representations of messy, irregularly-sampled time series — the kind you
-          get from health records — and the model's hidden states transfer surprisingly well to downstream prediction
+          auto-encoding. We use that to learn representations of messy, irregularly-sampled time series (think health records), and the model's hidden states transfer surprisingly well to downstream prediction
           tasks.</div>
         <div class="plinks"><a href="https://openreview.net/pdf?id=Fay67M5R3R" target="_blank" rel="noopener">Paper</a>
         </div>
@@ -703,11 +702,11 @@
       <div class="talks">
         <div class="row">
           <div class="when">May 2025</div>
-          <p style="margin:0"><span class="k">Keynote</span><i>Scaling Graph Transformers with Sparse and Sparsified Attention</i> — <a href="https://gsp2025.github.io/" target="_blank" rel="noopener">GSP 2025</a></p>
+          <p style="margin:0"><span class="k">Keynote</span><i>Scaling Graph Transformers with Sparse and Sparsified Attention</i> at <a href="https://gsp2025.github.io/" target="_blank" rel="noopener">GSP 2025</a></p>
         </div>
         <div class="row">
           <div class="when">Aug 2025</div>
-          <p style="margin:0"><span class="k">Tutorial</span><i>Geometric and Topological Representation Learning</i> — MLSP 2025 · <a href="https://mlsp2025graphs.github.io/" target="_blank" rel="noopener">slides &amp; materials</a></p>
+          <p style="margin:0"><span class="k">Tutorial</span><i>Geometric and Topological Representation Learning</i> at MLSP 2025 · <a href="https://mlsp2025graphs.github.io/" target="_blank" rel="noopener">slides &amp; materials</a></p>
         </div>
       </div>
     </section>
@@ -715,7 +714,7 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="closing">
-        <p>The fastest way to reach me is email: <a href="mailto:shirzad@cs.ubc.ca">shirzad@cs.ubc.ca</a>. I'm always
+        <p>The fastest way to reach me is email: <a class="email-link email-print" href="#">shirzad at cs.ubc.ca</a>. I'm always
           happy to talk about post-training, efficient architectures, or ML for the sciences.</p>
         <p>I'm also on the lookout for research scientist roles where I can keep pushing on these questions. If that
           overlaps with what your team is working on, I'd love to hear from you.</p>
@@ -750,6 +749,14 @@
         var next = cur() === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
         try { localStorage.setItem('theme', next); } catch (e) { }
+      });
+    })();
+    // Email assembled at runtime so the address is not in the static HTML for scrapers
+    (function () {
+      var addr = 'shirzad' + String.fromCharCode(64) + 'cs.ubc.ca';
+      document.querySelectorAll('.email-link').forEach(function (a) {
+        a.setAttribute('href', 'mailto:' + addr);
+        if (a.classList.contains('email-print')) a.textContent = addr;
       });
     })();
     document.getElementById('yr').textContent = new Date().getFullYear();
