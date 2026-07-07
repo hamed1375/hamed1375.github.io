@@ -442,6 +442,29 @@
       }
     }
 
+    /* experience timeline */
+    .timeline { position: relative; margin-top: 2px }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 12px; width: 2px; background: var(--line) }
+    .tl-item { position: relative; padding-left: 32px }
+    .tl-item::before { content: ""; position: absolute; left: 1px; top: 15px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); box-sizing: border-box; z-index: 1 }
+    .tl-item[open]::before { background: var(--accent) }
+    .tl-item + .tl-item { border-top: 1px solid var(--line) }
+    .tl-item > summary { list-style: none; cursor: pointer; display: block; padding: 11px 26px 11px 0; position: relative }
+    .tl-item > summary::-webkit-details-marker { display: none }
+    .tl-item > summary:hover .tl-role { color: var(--accent) }
+    .tl-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px }
+    .tl-role { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); transition: color .15s }
+    .tl-org { color: var(--muted); font-weight: 400 }
+    .tl-when { color: var(--muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums }
+    .tl-teaser { color: var(--muted); font-size: 14.5px; margin-top: 3px; padding-right: 8px }
+    .tl-item > summary::after { content: ""; position: absolute; right: 3px; top: 17px; width: 7px; height: 7px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform .2s }
+    .tl-item[open] > summary::after { transform: rotate(-135deg) }
+    .tl-body { margin: 0 0 12px; padding: 0 0 0 18px }
+    .tl-body li { font-size: 14.5px; color: var(--ink); margin: 5px 0; line-height: 1.55 }
+    @media(max-width:560px) {
+      .tl-head { flex-direction: column; gap: 1px }
+    }
+
     /* closing / contact */
     .closing {
       background: var(--surface);
@@ -485,6 +508,7 @@
       <span class="brand">Hamed Shirzad</span>
       <a class="link" href="#research">Research</a>
       <a class="link" href="#news">News</a>
+      <a class="link" href="#experience">Experience</a>
       <a class="link" href="#publications">Publications</a>
       <a class="link" href="#contact">Contact</a>
       <button class="themebtn" id="themebtn" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
@@ -575,6 +599,105 @@
           <div class="when">Sep 2024</div>
           <p class="what"><b>Even Sparser Graph Transformers</b> accepted at NeurIPS 2024.</p>
         </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Research Experience</h2>
+      <div class="timeline">
+
+        <details class="tl-item">
+          <summary>
+            <div class="tl-head">
+              <div class="tl-role">Student Researcher <span class="tl-org">· Google Research</span></div>
+              <div class="tl-when">Feb 2026 – Present · Remote</div>
+            </div>
+            <div class="tl-teaser">RL post-training of Gemma models via self-play and self-improvement.</div>
+          </summary>
+          <ul class="tl-body">
+            <li>Developing reinforcement-learning post-training methods in which language models improve through
+              self-play, generating and learning from their own training signal.</li>
+            <li>Fine-tuning Gemma 4 models up to 31B parameters with RL fine-tuning techniques, implemented in JAX, Flax,
+              and the Tunix post-training library.</li>
+          </ul>
+        </details>
+
+        <details class="tl-item">
+          <summary>
+            <div class="tl-head">
+              <div class="tl-role">Research Intern <span class="tl-org">· Valence Labs (Recursion), Virtual Cell</span>
+              </div>
+              <div class="tl-when">Mar 2025 – Dec 2025 · Montreal, Canada</div>
+            </div>
+            <div class="tl-teaser">Knowledge-graph models for biology; contributed to TxPert and led SeedER.</div>
+          </summary>
+          <ul class="tl-body">
+            <li>Co-developed knowledge-graph-based structured-prediction models of transcriptomic perturbation effects,
+              contributing to TxPert (<i>Nature Biotechnology</i>, 2026).</li>
+            <li>Developed SeedER, an RL-based seed-and-expand method for retrieval from biological knowledge graphs
+              (first-author paper under review at NeurIPS 2026).</li>
+            <li>Worked in an interdisciplinary team connecting machine-learning methods with large-scale biological
+              prediction for drug discovery.</li>
+          </ul>
+        </details>
+
+        <details class="tl-item">
+          <summary>
+            <div class="tl-head">
+              <div class="tl-role">Research Intern <span class="tl-org">· Borealis AI (now RBC Borealis)</span></div>
+              <div class="tl-when">Sep 2023 – Feb 2024 · Vancouver, Canada</div>
+            </div>
+            <div class="tl-teaser">Diffusion models as self-supervised backbones for irregular time series.</div>
+          </summary>
+          <ul class="tl-body">
+            <li>Developed conditional diffusion models as self-supervised learning backbones for irregular
+              event-sequence and time-series data (first-author paper at the Time Series for Health workshop, ICLR
+              2024).</li>
+          </ul>
+        </details>
+
+        <details class="tl-item">
+          <summary>
+            <div class="tl-head">
+              <div class="tl-role">Research Intern <span class="tl-org">· Autodesk AI Lab</span></div>
+              <div class="tl-when">Apr 2021 – Sep 2021 · Remote</div>
+            </div>
+            <div class="tl-teaser">Contrastively-learned evaluation metrics for graph generative models.</div>
+          </summary>
+          <ul class="tl-body">
+            <li>Developed contrastively-learned evaluation metrics for graph generative models, resulting in a
+              first-author NeurIPS 2022 paper.</li>
+          </ul>
+        </details>
+
+        <details class="tl-item">
+          <summary>
+            <div class="tl-head">
+              <div class="tl-role">Research Intern <span class="tl-org">· Borealis AI</span></div>
+              <div class="tl-when">Apr 2020 – Mar 2021 · Remote</div>
+            </div>
+            <div class="tl-teaser">Permutation-invariant graph generation via tree decomposition.</div>
+          </summary>
+          <ul class="tl-body">
+            <li>Developed permutation-invariant graph generation via tree decomposition with Prof. Greg Mori and Dr.
+              Hossein Hajimirsadeghi, leading to the first-author AISTATS 2022 paper TD-Gen.</li>
+          </ul>
+        </details>
+
+        <details class="tl-item">
+          <summary>
+            <div class="tl-head">
+              <div class="tl-role">Research Intern <span class="tl-org">· Max Planck Institute for Intelligent
+                  Systems</span></div>
+              <div class="tl-when">Jul 2018 – Sep 2018 · Tübingen, Germany</div>
+            </div>
+            <div class="tl-teaser">Kernelized Stein discrepancy and its applications.</div>
+          </summary>
+          <ul class="tl-body">
+            <li>Worked on kernelized Stein discrepancy and its applications under Prof. Krikamol Muandet.</li>
+          </ul>
+        </details>
+
       </div>
     </section>
 
